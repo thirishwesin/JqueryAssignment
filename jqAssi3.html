@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home loan Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#btnCalculate').click(function(){
+				ClickMe();
+			})
+		})
+
+		function ClickMe(){    
+			var p=parseInt($("#amountmoney").val());    
+			var r=parseInt($("#increasemoney").val());
+			var y=parseInt($("#yearlymoney").val());
+			
+			var Result=(p*r)*((1+r)^y/(1+r)^y-1);   
+			document.getElementById('result1').innerHTML= Result;
+			document.getElementById('result2').innerHTML= r;
+			document.getElementById('result3').innerHTML= y;
+			}
+	</script>
+
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container-fluid ml-5">
+			
+			<h1 class="display-5">Home loan Calculator</h1>
+			<p>to calculate money for home</p>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<form class="w-50 ml-5">
+		<div class="form-group row">
+			<label for="" class="col-sm-2 col-form-label">Amount Money: </label>
+			<div class="col-sm-10">
+				<input type="number" id="amountmoney" placeholder="..." class="form-control">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="" class="col-sm-2 col-form-label">Increase Amount: </label>
+			<div class="col-sm-10">
+				<input type="text" id="increasemoney" placeholder="..." class="form-control">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="" class="col-sm-2 col-form-label">Yearly Amount:</label>
+			<div class="col-sm-10">
+				<input type="text" id="yearlymoney" placeholder="..." class="form-control">
+			</div>
+		</div>
+		<div class="row ml-5">
+		   
+			<input type="button" id="btnCalculate" value="Calculate" class="btn btn-outline-primary ml-2 px-5 w-70" >
+		</div>
+		
+		
+		
+		
+	</form class="py-5">
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<p class="bg-light w-25 ml-3 p-3">Your Loan Payment</p>
+			<div class="">
+				<div class="row">
+					<p class="bg-light ml-5  p-3 px-5 w-100">Loan Payment Over 1 Year</p>
+			
+			
+				</div>
+				month qty:  
+			
+			<span id ="result1" class="text-success"></span>
+			<span id ="result2" class="text-primary"></span>
+			<span id ="result3" class="text-danger"></span>
+			
+			
+		</div>
+		</div>
+		
+
+
+	</div>
+</body>
+</html>

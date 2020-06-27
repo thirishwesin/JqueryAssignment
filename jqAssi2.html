@@ -1,0 +1,92 @@
+<html>    
+<head>    
+	<title>    
+		Simple Calculator with Jquery    
+	</title> 
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">   
+
+	
+</head>    
+<body> 
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	<script>    
+
+		$(document).ready(function(){    
+			$('#btnAdd').click(function(){
+				Add();
+			})   
+			$("#btnSubstract").click(function(){    
+				Substract();    
+			})    
+			$("#btnMultiply").click(function(){    
+				Multiply();    
+			})    
+			$("#btnDivide").click(function(){    
+				Divide();    
+			})    
+		});    
+		function Add(){    
+			var no1=parseInt($("#no1").val());    
+			var no2=parseInt($("#no2").val());    
+			var result =no1+no2;    
+			document.getElementById('result').innerHTML= result;
+
+			
+		}    
+		function Substract(){    
+			var no1=parseInt($("#no1").val());    
+			var no2=parseInt($("#no2").val());    
+			var result =no1-no2;    
+			document.getElementById('result').innerHTML= result;    
+		}    
+		function Multiply(){    
+			var no1=parseInt($("#no1").val());    
+			var no2=parseInt($("#no2").val());    
+			var result =no1*no2;    
+			document.getElementById('result').innerHTML= result;    
+		}    
+		function Divide(){    
+			var no1=parseInt($("#no1").val());    
+			var no2=parseInt($("#no2").val());    
+			var result =no1/no2;    
+			document.getElementById('result').innerHTML= result;    
+		}    
+	</script>
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container-fluid">
+			
+			<h1 class="display-5">Calculator</h1>
+
+		</div>
+	</div>
+
+	<form class="w-50 ml-5">
+		<div class="form-group row">
+			<label for="" class="col-sm-2 col-form-label">Number 1</label>
+			<div class="col-sm-10">
+				<input type="text" id="no1" placeholder="First Number.." class="form-control">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="" class="col-sm-2 col-form-label">Number 2</label>
+			<div class="col-sm-10">
+				<input type="text" id="no2" placeholder="Seconder Number.." class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<input type="button" id="btnAdd" value="+" class="btn btn-outline-primary  ml-2" style="width: 150px">    
+			<input type="button" id="btnSubstract" value="-" class="btn btn-outline-primary ml-2" style="width: 150px">    
+			<input type="button" id="btnMultiply" value="*" class="btn btn-outline-primary ml-2" style="width: 150px">    
+			<input type="button" id="btnDivide" value="/" class="btn btn-outline-primary ml-2" style="width: 150px">
+		</div>
+		
+		Result is: 
+		<span id ="result" class="text-danger"></span>
+		
+		
+	</form>
+	
+</body>    
+</html>   
